@@ -78,7 +78,7 @@ function PostList() {
       try {
         await axios.delete(`${API_URL}/${idPost}`);
         alert('Xóa thành công!');
-        setPosts(posts.filter(post => post.idPost !== idPost)); 
+        setPosts(posts.filter(post => post.idPost !== idPost));
       } catch (err) {
         console.error("Lỗi khi xóa:", err);
         alert(`Lỗi khi xóa: ${err.response?.data?.message || 'Lỗi server'}`);
@@ -100,8 +100,8 @@ function PostList() {
 
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
-      <h1 style={{ textAlign: 'center' }}>Frontend React CRUD (Kết nối Backend Node.js)</h1>
-      
+      <h1 style={{ textAlign: 'center' }}>Ngô Thanh Bảo Thứ 4 ca 2</h1>
+
       <div style={{ border: '1px solid #ccc', padding: '20px', marginBottom: '30px', borderRadius: '8px' }}>
         <h2>{isEditing ? 'Cập nhật Bài viết' : 'Tạo Bài viết Mới'}</h2>
         <form onSubmit={handleSubmit}>
@@ -123,8 +123,8 @@ function PostList() {
             {isEditing ? 'Lưu Cập nhật' : 'Tạo Bài viết'}
           </button>
           {isEditing && (
-            <button 
-              type="button" 
+            <button
+              type="button"
               onClick={resetForm}
               style={{ padding: '10px 15px', backgroundColor: '#6c757d', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '4px' }}
             >
@@ -149,14 +149,14 @@ function PostList() {
               <h3>{post.title} (ID: {post.idPost})</h3>
               <p>{post.description}</p>
               <div style={{ marginTop: '10px' }}>
-                <button 
-                  onClick={() => handleEdit(post)} 
+                <button
+                  onClick={() => handleEdit(post)}
                   style={{ marginRight: '10px', padding: '5px 10px', backgroundColor: '#007bff', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '3px' }}
                 >
                   Chỉnh sửa
                 </button>
-                <button 
-                  onClick={() => handleDelete(post.idPost)} 
+                <button
+                  onClick={() => handleDelete(post.idPost)}
                   style={{ padding: '5px 10px', backgroundColor: '#dc3545', color: 'white', border: 'none', cursor: 'pointer', borderRadius: '3px' }}
                 >
                   Xóa
